@@ -1,7 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import HomeView from '../views/HomeView.vue'
+import Invoice from "../views/invoices/invoices.vue"
+//layout
 import Layout from "../AquaLayout/Layout"
+
 
 const routes = [
   {
@@ -14,6 +17,11 @@ const routes = [
         name: 'home',
         component: HomeView
       },
+      {
+        path:"/invoices",
+        name:"Invoice",
+        component:Invoice
+      }
     ]
   },
 ]

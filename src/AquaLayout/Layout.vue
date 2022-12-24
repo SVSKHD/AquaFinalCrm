@@ -3,11 +3,11 @@
     <q-layout
       view="lHh Lpr lff"
       container
-      class="shadow-2 window-height rounded-borders"
+      class="shadow-2 q-pa-md window-height rounded-borders"
     >
       <q-header elevated class="bg-indigo-10">
         <q-toolbar>
-          <q-toolbar-title>Header</q-toolbar-title>
+          <q-toolbar-title>Aquakart</q-toolbar-title>
           <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
         </q-toolbar>
       </q-header>
