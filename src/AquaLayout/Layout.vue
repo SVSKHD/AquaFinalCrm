@@ -8,7 +8,8 @@
       <q-header elevated class="bg-indigo-10">
         <q-toolbar>
           <q-toolbar-title>Aquakart</q-toolbar-title>
-          <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
+          <q-btn flat to="/" icon="eva-home-outline" />
+          <q-btn flat @click="drawer = !drawer" round dense icon="eva-menu-2" />
         </q-toolbar>
       </q-header>
 
@@ -19,6 +20,20 @@
         :width="250"
         :breakpoint="400"
       >
+        <q-scroll-area class="fit" :horizontal-thumb-style="{ opacity: 0 }">
+          
+          <q-list v-for="item in Menu" :key="item.name">
+            <q-item clickable v-ripple :active="link === item.name">
+              <q-item-section avatar  >
+                <q-icon :name="item.icon" />
+              </q-item-section>
+
+              <q-item-section class="layout-menu-name"> {{ item.name }}</q-item-section>
+            </q-item>
+            <q-separator v-if="item.separator"/>
+          </q-list>
+
+        </q-scroll-area>
       </q-drawer>
 
       <q-page-container>
@@ -35,8 +50,24 @@ import { ref } from "vue";
 
 export default {
   setup() {
+    let drawer=ref(false)
+    let Menu = ref([
+      {
+        name:"Invoices",
+        icon:"eva-hard-drive",
+        path:"/invoices",
+        separator:true
+      },
+      {
+        name:"Transit",
+        icon:"eva-car-outline",
+        path:"/transit",
+        separator:true
+      }
+    ])
     return {
-      drawer: ref(false),
+      drawer,
+      Menu
     };
   },
 };

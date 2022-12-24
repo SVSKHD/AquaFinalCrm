@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import HomeView from '../views/HomeView.vue'
 import Invoice from "../views/invoices/invoices.vue"
+import Transit from "../views/Transit/Transit.vue"
 //layout
 import Layout from "../AquaLayout/Layout"
 
@@ -21,6 +22,11 @@ const routes = [
         path:"/invoices",
         name:"Invoice",
         component:Invoice
+      },
+      {
+        path:"/transit",
+        name:"Transit",
+        component:Transit
       }
     ]
   },

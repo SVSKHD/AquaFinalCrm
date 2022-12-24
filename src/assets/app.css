@@ -3,3 +3,9 @@
 body {
   font-family: "Poppins" !important;
 }
+
+
+.layout-menu-name{
+  font-family: 'Poppins'!important;
+  font-weight: bolder;
+}
