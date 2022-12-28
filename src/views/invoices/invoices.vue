@@ -26,6 +26,7 @@
                     <div class="row justify-around q-mb-sm">
                       <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
                         <q-input
+                          class="q-pa-sm"
                           color="black"
                           bg-color="white"
                           outlined
@@ -40,6 +41,7 @@
                       </div>
                       <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
                         <q-input
+                          class="q-pa-sm"
                           color="black"
                           bg-color="white"
                           outlined
@@ -54,6 +56,7 @@
                       </div>
                       <div class="col-md-3 col-lg-3 col-xs-12 col-sm-12">
                         <q-input
+                          class="q-pa-sm"
                           color="black"
                           bg-color="white"
                           outlined
