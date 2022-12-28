@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300;400&display=swap");
 
+:root{
+
+}
+
+
 body {
   font-family: "Poppins" !important;
 }
@@ -7,5 +12,15 @@ body {
 
 .layout-menu-name{
   font-family: 'Poppins'!important;
+  font-weight: bolder;
+}
+
+.q-tab__label{
+  font-weight: 'Poppins'!important;
+  font-weight: bolder;
+}
+
+.tab-text-heading{
+  font-weight: 'Poppins' !important;
   font-weight: bolder;
 }

@@ -20,20 +20,31 @@
         :width="250"
         :breakpoint="400"
       >
-        <q-scroll-area class="fit" :horizontal-thumb-style="{ opacity: 0 }">
-          
-          <q-list v-for="item in Menu" :key="item.name">
-            <q-item clickable v-ripple :active="link === item.name">
-              <q-item-section avatar  >
-                <q-icon :name="item.icon" />
+        <div v-for="item in Menu" :key="item" class="menu">
+          <q-list v-if="!item.submenu">
+            <q-item clickable :to="item.path">
+              <q-item-section avatar class="menu-icon">
+                <q-icon size="24px" :name="item.icon" />
               </q-item-section>
 
-              <q-item-section class="layout-menu-name"> {{ item.name }}</q-item-section>
+              <q-item-section class="layout-menu-name">
+                {{ item.name }}
+              </q-item-section>
             </q-item>
-            <q-separator v-if="item.separator"/>
           </q-list>
+          <q-expansion-item v-else>
+            <template #header>
+              <q-item-section avatar class="menu-icon">
+                <q-icon size="24px" :name="item.icon" />
+              </q-item-section>
 
-        </q-scroll-area>
+              <q-item-section class="layout-menu-name">
+                {{ item.name }}
+              </q-item-section>
+            </template>
+          </q-expansion-item>
+          <q-separator color="blue-grey-7" />
+        </div>
       </q-drawer>
 
       <q-page-container>
@@ -50,24 +61,24 @@ import { ref } from "vue";
 
 export default {
   setup() {
-    let drawer=ref(false)
+    let drawer = ref(false);
     let Menu = ref([
       {
-        name:"Invoices",
-        icon:"eva-hard-drive",
-        path:"/invoices",
-        separator:true
+        name: "Invoices",
+        icon: "eva-hard-drive",
+        path: "/invoices",
+        separator: true,
       },
       {
-        name:"Transit",
-        icon:"eva-car-outline",
-        path:"/transit",
-        separator:true
-      }
-    ])
+        name: "Transit",
+        icon: "eva-car-outline",
+        path: "/transit",
+        separator: true,
+      },
+    ]);
     return {
       drawer,
-      Menu
+      Menu,
     };
   },
 };
